@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>heart shape</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0b1522;
+    }
+
+    .heart {
+      height: 70px;
+      width: 70px;
+      background: #ee3b3b;
+      transform: rotate(-45deg);
+      box-shadow: -10px 10px 90px #ee3b3b;
+      animation: heart 0.7s linear infinite;
+    }
+
+    @keyframes heart {
+      0% {
+        transform: rotate(-45deg) scale(1.08);
+      }
+      80% {
+        transform: rotate(-45deg) scale(1.01);
+      }
+      100% {
+        transform: rotate(-45deg) scale(0.9);
+      }
+    }
+    .heart::before {
+      content: "";
+      position: absolute;
+      height: 70px;
+      width: 70px;
+      background: #ee3b3b;
+      top: -50%;
+      border-radius: 50px;
+      box-shadow: -10px -10px 90px #ee3b3b;
+    }
+
+    .heart::after {
+      content: "";
+      position: absolute;
+      height: 70px;
+      width: 70px;
+      background: #ee3b3b;
+      right: -50%;
+      border-radius: 50px;
+      box-shadow: 10px 10px 90px #ee3b3b;
+    }
+  </style>
+  <body>
+    <div class="heart"></div>
+  </body>
+</html>
